@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - '4566:4566'   # LocalStack Edge
+      - '4575:4575'   # SNS
+      - '4576:4576'   # SQS
+      - '8055:8080'   # LocalStack Console
+    environment:
+      - SERVICES=sns,sqs
+      - DEBUG=1
+      - DATA_DIR=/tmp/localstack/data
+    volumes:
+      - './.localstack:/tmp/localstack'
+      - '/var/run/docker.sock:/var/run/docker.sock'

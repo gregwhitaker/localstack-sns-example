@@ -1,0 +1,22 @@
+plugins {
+    id "java"
+    id "application"
+}
+
+group = "com.github.gregwhitaker"
+version = "0.1.0"
+mainClassName = "example.localstack.sns.Application"
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.projectreactor:reactor-core:3.3.5.RELEASE'
+    implementation 'com.amazonaws:aws-java-sdk-sns:1.11.769'
+    implementation 'com.amazonaws:aws-java-sdk-sqs:1.11.769'
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+}
